@@ -5,9 +5,9 @@
 
 int main()
 {
-  int a = 0, C=0, D=0, counter = 0;	// Count initialisers
-  int i, j;				// for loop
-  int A;				// Value to scan for
+  int a=0, C=0, D=0, counter=0;	// Count initialisers
+  int i, j;				              // for loop
+  int A;				                // Value to scan for
   int  *data, *data1, *data2;		// array pointers
 
   printf("Enter the first n numbers you want to see: ");
@@ -94,6 +94,7 @@ int main()
     printf("Error!");
     exit(1);
   }
+  
   fprintf(fptr, "N		primes		Biggest Prime		time\n");
   fprintf(gptr, "%d		%d		%d			%f seconds\n", A, counter, data2[counter-1], time_spent);
   fclose(fptr);

@@ -26,7 +26,7 @@ plt.scatter(N, time)
 plt.show()
 #plt.savefig("images/time_graph.png")
 
-# The Time Complexity curve O(n**2)
+# Graph to show frequency of Prime numbers as N increases
 plt.plot(arr, prime_curve)
 plt.scatter(N, primes)
 plt.show()

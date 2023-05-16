@@ -1,14 +1,14 @@
-lists: build/lists.o
-	gcc -o lists src/lists.c
+lists: build/primes.o
+	gcc -o primes src/primes.c
 
-build/lists.o: src/lists.c
-	gcc -o -c src/lists.c
+build/lists.o: src/primes.c
+	gcc -o -c src/primes.c
 
 build/%.o: src/%.c | build
 	gcc -o $@ -c $<
 
 clean:
-	rm  lists ./-c
+	rm  -f -r build primes *.o
 
 build:
 	mkdir build
