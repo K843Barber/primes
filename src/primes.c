@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+//#define VERSION 2
 
 void write_fn(char *file_headers, char *stats, int A, int counter, int *data2, double time_spent)
 {
@@ -106,14 +107,7 @@ int main()
   clock_t end = clock();
   double time_spent = (double)(end-begin) /CLOCKS_PER_SEC;
 
-  #if VERSION == 1
   write_fn("data/headers.txt", "data/timetaken.txt", A, counter, data2, time_spent);
-
-  #endif
-  #if VERSION == 2
-  printf("Version2");
-  #endif
-
 
   return 0;
 }

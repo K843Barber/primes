@@ -10,7 +10,8 @@ build/%.o: src/%.c | build
 	gcc -o $@ -DVERSION=$(VERSION) -c $<
 
 clean:
-	rm  -f -r build primes *.o
+	@rm  -f -r build primes *.o
+	@echo Cleaned it ya filthy animal!
 
 build:
 	mkdir build
