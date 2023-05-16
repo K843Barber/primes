@@ -3,6 +3,27 @@
 #include <string.h>
 #include <time.h>
 
+void write_fn(char *file_headers, char *stats, int A, int counter, int *data2, double time_spent)
+{
+  FILE *fptr, *gptr;
+
+  fptr = fopen(file_headers, "w");
+  gptr = fopen(stats, "a");
+
+  if(fptr == NULL || gptr == NULL)
+  {
+    printf("Error!");
+    exit(1);
+  }
+  
+  fprintf(fptr, "N		primes		Biggest Prime		time\n");
+  fprintf(gptr, "%d		%d		%d			%f seconds\n", A, counter, data2[counter-1], time_spent);
+  fclose(fptr);
+  fclose(gptr);
+
+  printf("There are %d prime numbers between 1 and %d which took %f seconds to compute, bitch. The biggest is %d\n", counter, A, time_spent, data2[counter-1]);
+}
+
 int main()
 {
   int a=0, C=0, D=0, counter=0;	// Count initialisers
@@ -84,22 +105,17 @@ int main()
 
   clock_t end = clock();
   double time_spent = (double)(end-begin) /CLOCKS_PER_SEC;
-  FILE *fptr, *gptr;
 
-  fptr = fopen("data/headers.txt", "w");
-  gptr = fopen("data/timetaken.txt", "a");
+  #if VERSION == 1
+  write_fn("data/headers.txt", "data/timetaken.txt", A, counter, data2, time_spent);
 
-  if(fptr == NULL || gptr == NULL)
-  {
-    printf("Error!");
-    exit(1);
-  }
-  
-  fprintf(fptr, "N		primes		Biggest Prime		time\n");
-  fprintf(gptr, "%d		%d		%d			%f seconds\n", A, counter, data2[counter-1], time_spent);
-  fclose(fptr);
-  fclose(gptr);
+  #endif
+  #if VERSION == 2
+  printf("Version2");
+  #endif
 
-  printf("There are %d prime numbers between 1 and %d which took %f seconds to compute, bitch. The biggest is %d\n", counter, A, time_spent, data2[counter-1]);
+
   return 0;
 }
+
+// Options: Write to file with text output, print all the primes between range, chec if value is prime
