@@ -1,0 +1,1 @@
+N		primes		Biggest Prime		time
