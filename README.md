@@ -8,4 +8,4 @@ Once you have cloned, you just need to run `make` and then `./primes.c` where yo
 
 ### What else is included
 
-We also have a python file which goes ahead shows the time complexity to compute these values.
+We also have a python file which goes ahead shows the time complexity to compute these values. To run this, run `python3 graphs.py`
