@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+//#include <writing.h>
 //#define VERSION 2
 
 void write_fn(char *file_headers, char *stats, int A, int counter, int *data2, double time_spent)

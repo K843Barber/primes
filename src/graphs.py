@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-with open("data/timetaken.txt", "r") as f:
+with open("../data/timetaken.txt", "r") as f:
 	lines = f.readlines()
 
 a = [item for sublist in lines for item in sublist.split("\t")]
@@ -9,8 +9,6 @@ a = [item for sublist in lines for item in sublist.split("\t")]
 N = a[::8]
 time = a[7::8]
 primes = a[2::8]
-
-print(primes)
 
 N = [int(i) for i in N]
 time = [float(i.split(" ")[0]) for i in time]
@@ -22,12 +20,18 @@ prime_curve = [x/1.35e1 for x in arr]
 
 # The Time Complexity curve O(n**2)
 plt.plot(arr, time_curve)
+plt.title("Time Complexity to compute prime numbers")
+plt.xlabel("N")
+plt.ylabel("Time (s)")
 plt.scatter(N, time)
 plt.show()
-#plt.savefig("images/time_graph.png")
+#plt.savefig("../images/time_graph.png")
 
 # Graph to show frequency of Prime numbers as N increases
 plt.plot(arr, prime_curve)
+plt.title("Frequency of primes")
+plt.xlabel("N")
+plt.ylabel("Count")
 plt.scatter(N, primes)
 plt.show()
-#plt.savefig("images/prime_graph.png")
+#plt.savefig("../images/prime_graph.png")
