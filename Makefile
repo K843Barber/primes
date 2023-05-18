@@ -11,7 +11,7 @@ build/%.o: src/%.c | build
 	gcc -o $@ -DVERSION=$(VERSION) -c 
 
 clean:
-	@rm  -f -r  primes *.o ./-c
+	@rm  -f -r build primes *.o ./-c
 	@echo Cleaned it ya filthy animal!
 
 build:
