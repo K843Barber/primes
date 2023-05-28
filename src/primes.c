@@ -5,6 +5,20 @@
 //#include <writing.h>
 //#define VERSION 2
 
+void startup_message()
+{
+  printf("\e[1;1H\e[2J");
+  
+  printf("\t\t\t\t\t\033[1;31mPPPPPPP   RRRRRRR   IIIIII  MM      MM   EEEEEE  SSSSSSS\033[0m\n");
+  printf("\t\t\t\t\t\033[1;32mPP   PP   RR   RR     II    MMMM  MMMM   EE      SS\033[0m\n");
+  printf("\t\t\t\t\t\033[1;33mPPPPPPP   RRRRRRR     II    MM  MM  MM   EEEEE   SSSSSSS\033[0m\n");
+  printf("\t\t\t\t\t\033[1;34mPP        RR RR       II    MM      MM   EE           SS\033[0m\n");
+  printf("\t\t\t\t\t\033[1;35mPP        RR   RR   IIIIII  MM      MM   EEEEEE  SSSSSSS\033[0m\n");
+
+  printf("\n\n");
+
+}
+
 void write_fn(char *file_headers, char *stats, int A, int counter, int *data2, double time_spent)
 {
   FILE *fptr, *gptr;
@@ -65,6 +79,8 @@ int main()
   int i, j;				              // for loop
   int A, value;				                // Value to scan for
   int  *data, *data1, *data2, count;		// array pointers
+
+  startup_message();
 
   printf("Enter a number N: ");
   scanf("%d", &A);
