@@ -39,15 +39,39 @@ int count_primes(int *data2, int a)
   return counter;
 }
 
+int check_is_prime(int A, int value, int *data2)
+{
+  int i=0;
+
+  while(value<=A)
+  {
+    if(value==data2[i])
+    {
+      printf("%d is a prime number!\n", value);
+      break;
+    }
+    else if (i==A)
+    {
+      printf("%d is not a prime number!\n", value);
+      break;
+    }
+    i++;
+  }
+}
+
 int main()
 {
   int a=0, C=0, D=0;	// Count initialisers
   int i, j;				              // for loop
-  int A;				                // Value to scan for
+  int A, value;				                // Value to scan for
   int  *data, *data1, *data2, count;		// array pointers
 
-  printf("Enter the first n numbers you want to see: ");
+  printf("Enter a number N: ");
   scanf("%d", &A);
+
+  printf("Is it prime? Check if a value is prime or not between 1 and %d: ", A);
+  scanf("%d", &value);
+
 
   clock_t begin = clock();
 
@@ -106,12 +130,16 @@ int main()
     }
   }
 
+  check_is_prime(A, value, data2);
+
   count = count_primes(data2, a); // Counts the number of primes
 
   clock_t end = clock();
   double time_spent = (double)(end-begin) /CLOCKS_PER_SEC;  
   
   write_fn("data/headers.txt", "data/timetaken.txt", A, count, data2, time_spent);
+
+
 
   return 0;
 }
