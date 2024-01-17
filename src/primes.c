@@ -75,10 +75,10 @@ int check_is_prime(int A, int value, int *data2)
 
 int main()
 {
-  int a=0, C=0, D=0;	// Count initialisers
-  int i, j;				              // for loop
+  int a=0, C=0, D=0;	                // Count initialisers
+  int i, j;				                    // for loop
   int A, value;				                // Value to scan for
-  int  *data, *data1, *data2, count;		// array pointers
+  int  *data, *data1, *data2, count;	// array pointers
 
   startup_message();
 
