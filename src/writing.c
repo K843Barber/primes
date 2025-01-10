@@ -18,5 +18,5 @@ void write_fn(char *file_headers, char *stats, int A, int counter, int *data2, d
   fclose(fptr);
   fclose(gptr);
 
-  printf("There are %d prime numbers between 1 and %d which took %f seconds to compute, bitch. The biggest is %d\n", counter, A, time_spent, data2[counter-1]);
+  printf("There are %d prime numbers between 1 and %d which took %f seconds to compute. The biggest is %d\n", counter, A, time_spent, data2[counter-1]);
 }
